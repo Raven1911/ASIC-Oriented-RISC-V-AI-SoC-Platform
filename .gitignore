@@ -1,0 +1,55 @@
+# Ignore vscode and pycharm project files
+.vscode/
+.idea/
+__pycache__/
+*/__pycache__/
+*/*/__pycache__/
+*.py[cod]
+
+# Ignore local Python/TensorFlow environments
+.venv/
+.venv-*/
+venv/
+env/
+ENV/
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Ignore common TensorFlow/Keras generated artifacts
+*.h5
+*.keras
+*.tflite
+saved_model/
+temp_saved_model/
+
+
+# Ignore Build folders
+Build/
+build/
+*/Build/
+*/build/
+
+# Ignore output files
+*.hex
+*.elf
+*.bin
+
+*/*.hex
+*/*.elf
+*/*.bin
+
+*/*/*.hex
+*/*/*.elf
+*/*/*.bin
+
+*/*.log
+
+# Ignore local datasets and generated large headers
+datasheet/
+dataset_capture/
+
+# Ignore Codex local metadata
+.agents/
+.codex/

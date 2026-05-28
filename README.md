@@ -16,7 +16,7 @@ Các phần chính:
 
 - Thiết kế nền tảng SoC dựa trên RISC-V.
 - Tích hợp firmware, bootloader và lớp SoC HAL.
-- Tích hợp các ngoại vi như UART, SPI/OSPI, I2C, GPIO, timer, HyperRAM và video streaming.
+- Tích hợp các ngoại vi như UART, SPI/HYPERRAM, I2C, GPIO, timer, HyperRAM và Video Streaming.
 - Xây dựng luồng CNN accelerator cho tác vụ AI nhúng.
 - So sánh và kiểm chứng kết quả với golden model chạy trên host.
 - Trình bày báo cáo thesis, kiến trúc hệ thống và video demo.
