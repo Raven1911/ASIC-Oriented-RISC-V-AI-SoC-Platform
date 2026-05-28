@@ -1,0 +1,7 @@
+open_checkpoint /home/raven1911/Data/vivado_prj/Beta_AISoC/Beta_AISoC.runs/impl_5_copy_1/BK_AISoC_postroute_physopt.dcp
+
+report_utilization -hierarchical -hierarchical_depth 4 -file reports/vivado/BK_AISoC_utilization_hierarchical_depth4.rpt
+report_utilization -hierarchical -hierarchical_depth 6 -file reports/vivado/BK_AISoC_utilization_hierarchical_depth6.rpt
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 20 -file reports/vivado/BK_AISoC_timing_summary_consolidated.rpt
+report_clock_utilization -file reports/vivado/BK_AISoC_clock_utilization_consolidated.rpt
+report_route_status -file reports/vivado/BK_AISoC_route_status_consolidated.rpt

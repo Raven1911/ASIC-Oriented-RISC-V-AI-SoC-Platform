@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=BK-AISoC Golden Model
+Comment=Host golden model dashboard for BK-AISoC RPS demo
+Exec=/bin/bash /home/raven1911/Data/Source_Thesis/Beta_AISoC_Firmware/software_golden_model_rps/run_golden_model.sh
+Icon=/home/raven1911/Data/Source_Thesis/Beta_AISoC_Firmware/software_golden_model_rps/assets/hcmut_cropped.png
+Path=/home/raven1911/Data/Source_Thesis/Beta_AISoC_Firmware/software_golden_model_rps
+Terminal=false
+StartupNotify=true
+StartupWMClass=bk-aisoc-golden-model
+Categories=Development;

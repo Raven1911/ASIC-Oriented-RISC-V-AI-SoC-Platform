@@ -1,0 +1,33 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/raven1911/Data/vivado_prj/Beta_AISoC/Beta_AISoC.srcs/sources_1/new/video_streaming_axi_lite_core.v" into library work
+INFO: [VRFC 10-311] analyzing module video_streaming_axi_lite_core
+INFO: [VRFC 10-311] analyzing module DVP_RX_TX_core
+ERROR: [VRFC 10-2938] 'ctrl_empty' is already implicitly declared on line 488 [/home/raven1911/Data/vivado_prj/Beta_AISoC/Beta_AISoC.srcs/sources_1/new/video_streaming_axi_lite_core.v:587]
+ERROR: [VRFC 10-2938] 'ctrl_wr' is already implicitly declared on line 484 [/home/raven1911/Data/vivado_prj/Beta_AISoC/Beta_AISoC.srcs/sources_1/new/video_streaming_axi_lite_core.v:589]
+ERROR: [VRFC 10-2938] 'ctrl_addr_wr' is already implicitly declared on line 537 [/home/raven1911/Data/vivado_prj/Beta_AISoC/Beta_AISoC.srcs/sources_1/new/video_streaming_axi_lite_core.v:593]
+ERROR: [VRFC 10-2938] 'ctrl_addr_rd' is already implicitly declared on line 578 [/home/raven1911/Data/vivado_prj/Beta_AISoC/Beta_AISoC.srcs/sources_1/new/video_streaming_axi_lite_core.v:594]
+ERROR: [VRFC 10-2938] 'ctrl_data_i' is already implicitly declared on line 486 [/home/raven1911/Data/vivado_prj/Beta_AISoC/Beta_AISoC.srcs/sources_1/new/video_streaming_axi_lite_core.v:596]
+ERROR: [VRFC 10-2938] 'ctrl_data_o' is already implicitly declared on line 583 [/home/raven1911/Data/vivado_prj/Beta_AISoC/Beta_AISoC.srcs/sources_1/new/video_streaming_axi_lite_core.v:598]
+ERROR: [VRFC 10-2938] 'data_count_w' is already implicitly declared on line 634 [/home/raven1911/Data/vivado_prj/Beta_AISoC/Beta_AISoC.srcs/sources_1/new/video_streaming_axi_lite_core.v:678]
+ERROR: [VRFC 10-2938] 'rgb565_wire' is already implicitly declared on line 690 [/home/raven1911/Data/vivado_prj/Beta_AISoC/Beta_AISoC.srcs/sources_1/new/video_streaming_axi_lite_core.v:714]
+ERROR: [VRFC 10-2938] 'fifo_read_en' is already implicitly declared on line 688 [/home/raven1911/Data/vivado_prj/Beta_AISoC/Beta_AISoC.srcs/sources_1/new/video_streaming_axi_lite_core.v:715]
+ERROR: [VRFC 10-8530] module 'DVP_RX_TX_core' is ignored due to previous errors [/home/raven1911/Data/vivado_prj/Beta_AISoC/Beta_AISoC.srcs/sources_1/new/video_streaming_axi_lite_core.v:350]
+INFO: [VRFC 10-311] analyzing module fifo_dvp_unit
+ERROR: [VRFC 10-8530] module 'fifo_dvp_unit' is ignored due to previous errors [/home/raven1911/Data/vivado_prj/Beta_AISoC/Beta_AISoC.srcs/sources_1/new/video_streaming_axi_lite_core.v:793]
+INFO: [VRFC 10-311] analyzing module fifo_ctrl_dvp
+ERROR: [VRFC 10-8530] module 'fifo_ctrl_dvp' is ignored due to previous errors [/home/raven1911/Data/vivado_prj/Beta_AISoC/Beta_AISoC.srcs/sources_1/new/video_streaming_axi_lite_core.v:839]
+INFO: [VRFC 10-311] analyzing module register_file_dvp
+ERROR: [VRFC 10-8530] module 'register_file_dvp' is ignored due to previous errors [/home/raven1911/Data/vivado_prj/Beta_AISoC/Beta_AISoC.srcs/sources_1/new/video_streaming_axi_lite_core.v:929]
+INFO: [VRFC 10-311] analyzing module uiSensorRGB565
+ERROR: [VRFC 10-8530] module 'uiSensorRGB565' is ignored due to previous errors [/home/raven1911/Data/vivado_prj/Beta_AISoC/Beta_AISoC.srcs/sources_1/new/video_streaming_axi_lite_core.v:957]
+INFO: [VRFC 10-311] analyzing module vgaHDMI_interface3
+ERROR: [VRFC 10-8530] module 'vgaHDMI_interface3' is ignored due to previous errors [/home/raven1911/Data/vivado_prj/Beta_AISoC/Beta_AISoC.srcs/sources_1/new/video_streaming_axi_lite_core.v:1044]
+INFO: [VRFC 10-311] analyzing module vgaHDMI_core
+ERROR: [VRFC 10-8530] module 'vgaHDMI_core' is ignored due to previous errors [/home/raven1911/Data/vivado_prj/Beta_AISoC/Beta_AISoC.srcs/sources_1/new/video_streaming_axi_lite_core.v:1160]
+INFO: [VRFC 10-311] analyzing module control_frame_buffer_write_only
+ERROR: [VRFC 10-8530] module 'control_frame_buffer_write_only' is ignored due to previous errors [/home/raven1911/Data/vivado_prj/Beta_AISoC/Beta_AISoC.srcs/sources_1/new/video_streaming_axi_lite_core.v:1257]
+INFO: [VRFC 10-311] analyzing module control_frame_buffer_read_only
+ERROR: [VRFC 10-8530] module 'control_frame_buffer_read_only' is ignored due to previous errors [/home/raven1911/Data/vivado_prj/Beta_AISoC/Beta_AISoC.srcs/sources_1/new/video_streaming_axi_lite_core.v:1355]
+INFO: [VRFC 10-311] analyzing module asyn_fifo
+ERROR: [VRFC 10-8530] module 'asyn_fifo' is ignored due to previous errors [/home/raven1911/Data/vivado_prj/Beta_AISoC/Beta_AISoC.srcs/sources_1/new/video_streaming_axi_lite_core.v:1464]
+INFO: [VRFC 10-311] analyzing module dual_port_sync
+INFO: [#UNDEF] Sorry, too many errors..

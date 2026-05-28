@@ -1,0 +1,1152 @@
+{
+  "model_path": "models\\rps_cnn_96_s2_qat_sympad_int8_per_layer.tflite",
+  "numeric_policy": "integer_only; TFLite still stores quantization metadata for runtime compatibility, and this sidecar represents scales as mult / 2^shift",
+  "format": {
+    "mult_bits": 32,
+    "shift_bits": 6,
+    "requant_formula": "q_out = clamp(round(acc * mult / 2^shift) + output_zero_point)",
+    "input_formula": "q_in = clamp(round((pixel * mult[channel] + offset[channel]) / 2^shift))",
+    "tensor_scale_formula": "scale = scale_mult_int32 / 2^scale_shift_uint6"
+  },
+  "input": {
+    "tensor_index": 0,
+    "zero_point": -26,
+    "pixel_denominator": 255,
+    "fixed": {
+      "shift": 23,
+      "mult": [
+        8365456,
+        8258730,
+        8212540
+      ],
+      "offset": [
+        -1071980823,
+        -1077884680,
+        -1036059575
+      ]
+    }
+  },
+  "output": {
+    "tensor_index": 23,
+    "zero_point": -128,
+    "scale_mult_int32": [
+      8388608
+    ],
+    "scale_shift_uint6": [
+      31
+    ]
+  },
+  "ops": [
+    {
+      "op_index": 0,
+      "op_name": "PAD",
+      "inputs": [
+        0,
+        1
+      ],
+      "outputs": [
+        13
+      ]
+    },
+    {
+      "op_index": 1,
+      "op_name": "CONV_2D",
+      "inputs": [
+        13,
+        12,
+        11
+      ],
+      "outputs": [
+        14
+      ]
+    },
+    {
+      "op_index": 2,
+      "op_name": "PAD",
+      "inputs": [
+        14,
+        1
+      ],
+      "outputs": [
+        15
+      ]
+    },
+    {
+      "op_index": 3,
+      "op_name": "CONV_2D",
+      "inputs": [
+        15,
+        10,
+        9
+      ],
+      "outputs": [
+        16
+      ]
+    },
+    {
+      "op_index": 4,
+      "op_name": "PAD",
+      "inputs": [
+        16,
+        1
+      ],
+      "outputs": [
+        17
+      ]
+    },
+    {
+      "op_index": 5,
+      "op_name": "CONV_2D",
+      "inputs": [
+        17,
+        8,
+        7
+      ],
+      "outputs": [
+        18
+      ]
+    },
+    {
+      "op_index": 6,
+      "op_name": "PAD",
+      "inputs": [
+        18,
+        1
+      ],
+      "outputs": [
+        19
+      ]
+    },
+    {
+      "op_index": 7,
+      "op_name": "CONV_2D",
+      "inputs": [
+        19,
+        6,
+        5
+      ],
+      "outputs": [
+        20
+      ]
+    },
+    {
+      "op_index": 8,
+      "op_name": "CONV_2D",
+      "inputs": [
+        20,
+        4,
+        3
+      ],
+      "outputs": [
+        21
+      ]
+    },
+    {
+      "op_index": 9,
+      "op_name": "MEAN",
+      "inputs": [
+        21,
+        2
+      ],
+      "outputs": [
+        22
+      ]
+    },
+    {
+      "op_index": 10,
+      "op_name": "SOFTMAX",
+      "inputs": [
+        22
+      ],
+      "outputs": [
+        23
+      ]
+    }
+  ],
+  "tensor_quantization": [
+    {
+      "index": 0,
+      "name": "serving_default_input_2:0",
+      "shape": [
+        1,
+        96,
+        96,
+        3
+      ],
+      "dtype": "int8",
+      "zero_point": [
+        -26
+      ],
+      "scale_mult_int32": [
+        29051676
+      ],
+      "scale_shift_uint6": [
+        31
+      ],
+      "quantized_dimension": 0
+    },
+    {
+      "index": 3,
+      "name": "rps_cnn_96_s2_5conv_symmetric_pad/conv2d_4/BiasAdd/ReadVariableOp",
+      "shape": [
+        3
+      ],
+      "dtype": "int32",
+      "zero_point": [
+        0
+      ],
+      "scale_mult_int32": [
+        561653
+      ],
+      "scale_shift_uint6": [
+        31
+      ],
+      "quantized_dimension": 0
+    },
+    {
+      "index": 4,
+      "name": "rps_cnn_96_s2_5conv_symmetric_pad/conv2d_4/Conv2D",
+      "shape": [
+        3,
+        1,
+        1,
+        192
+      ],
+      "dtype": "int8",
+      "zero_point": [
+        0
+      ],
+      "scale_mult_int32": [
+        9942582
+      ],
+      "scale_shift_uint6": [
+        31
+      ],
+      "quantized_dimension": 0
+    },
+    {
+      "index": 5,
+      "name": "rps_cnn_96_s2_5conv_symmetric_pad/batch_normalization_3/FusedBatchNormV3",
+      "shape": [
+        192
+      ],
+      "dtype": "int32",
+      "zero_point": [
+        0
+      ],
+      "scale_mult_int32": [
+        82971
+      ],
+      "scale_shift_uint6": [
+        31
+      ],
+      "quantized_dimension": 0
+    },
+    {
+      "index": 6,
+      "name": "rps_cnn_96_s2_5conv_symmetric_pad/conv2d_3/Conv2D",
+      "shape": [
+        192,
+        3,
+        3,
+        128
+      ],
+      "dtype": "int8",
+      "zero_point": [
+        0
+      ],
+      "scale_mult_int32": [
+        2826149
+      ],
+      "scale_shift_uint6": [
+        31
+      ],
+      "quantized_dimension": 0
+    },
+    {
+      "index": 7,
+      "name": "rps_cnn_96_s2_5conv_symmetric_pad/batch_normalization_2/FusedBatchNormV3",
+      "shape": [
+        128
+      ],
+      "dtype": "int32",
+      "zero_point": [
+        0
+      ],
+      "scale_mult_int32": [
+        108160
+      ],
+      "scale_shift_uint6": [
+        31
+      ],
+      "quantized_dimension": 0
+    },
+    {
+      "index": 8,
+      "name": "rps_cnn_96_s2_5conv_symmetric_pad/conv2d_2/Conv2D",
+      "shape": [
+        128,
+        3,
+        3,
+        64
+      ],
+      "dtype": "int8",
+      "zero_point": [
+        0
+      ],
+      "scale_mult_int32": [
+        3101478
+      ],
+      "scale_shift_uint6": [
+        31
+      ],
+      "quantized_dimension": 0
+    },
+    {
+      "index": 9,
+      "name": "rps_cnn_96_s2_5conv_symmetric_pad/batch_normalization_1/FusedBatchNormV3",
+      "shape": [
+        64
+      ],
+      "dtype": "int32",
+      "zero_point": [
+        0
+      ],
+      "scale_mult_int32": [
+        198225
+      ],
+      "scale_shift_uint6": [
+        31
+      ],
+      "quantized_dimension": 0
+    },
+    {
+      "index": 10,
+      "name": "rps_cnn_96_s2_5conv_symmetric_pad/conv2d_1/Conv2D",
+      "shape": [
+        64,
+        3,
+        3,
+        32
+      ],
+      "dtype": "int8",
+      "zero_point": [
+        0
+      ],
+      "scale_mult_int32": [
+        4335351
+      ],
+      "scale_shift_uint6": [
+        31
+      ],
+      "quantized_dimension": 0
+    },
+    {
+      "index": 11,
+      "name": "rps_cnn_96_s2_5conv_symmetric_pad/batch_normalization_0/FusedBatchNormV3",
+      "shape": [
+        32
+      ],
+      "dtype": "int32",
+      "zero_point": [
+        0
+      ],
+      "scale_mult_int32": [
+        773255
+      ],
+      "scale_shift_uint6": [
+        31
+      ],
+      "quantized_dimension": 0
+    },
+    {
+      "index": 12,
+      "name": "rps_cnn_96_s2_5conv_symmetric_pad/conv2d_0/Conv2D",
+      "shape": [
+        32,
+        3,
+        3,
+        3
+      ],
+      "dtype": "int8",
+      "zero_point": [
+        0
+      ],
+      "scale_mult_int32": [
+        57158596
+      ],
+      "scale_shift_uint6": [
+        31
+      ],
+      "quantized_dimension": 0
+    },
+    {
+      "index": 13,
+      "name": "rps_cnn_96_s2_5conv_symmetric_pad/symmetric_pad_0/Pad",
+      "shape": [
+        1,
+        98,
+        98,
+        3
+      ],
+      "dtype": "int8",
+      "zero_point": [
+        -26
+      ],
+      "scale_mult_int32": [
+        29051676
+      ],
+      "scale_shift_uint6": [
+        31
+      ],
+      "quantized_dimension": 0
+    },
+    {
+      "index": 14,
+      "name": "rps_cnn_96_s2_5conv_symmetric_pad/relu_0/Relu;rps_cnn_96_s2_5conv_symmetric_pad/batch_normalization_0/FusedBatchNormV3;rps_cnn_96_s2_5conv_symmetric_pad/conv2d_0/Conv2D",
+      "shape": [
+        1,
+        48,
+        48,
+        32
+      ],
+      "dtype": "int8",
+      "zero_point": [
+        -128
+      ],
+      "scale_mult_int32": [
+        98189312
+      ],
+      "scale_shift_uint6": [
+        31
+      ],
+      "quantized_dimension": 0
+    },
+    {
+      "index": 15,
+      "name": "rps_cnn_96_s2_5conv_symmetric_pad/symmetric_pad_1/Pad",
+      "shape": [
+        1,
+        50,
+        50,
+        32
+      ],
+      "dtype": "int8",
+      "zero_point": [
+        -128
+      ],
+      "scale_mult_int32": [
+        98189312
+      ],
+      "scale_shift_uint6": [
+        31
+      ],
+      "quantized_dimension": 0
+    },
+    {
+      "index": 16,
+      "name": "rps_cnn_96_s2_5conv_symmetric_pad/relu_1/Relu;rps_cnn_96_s2_5conv_symmetric_pad/batch_normalization_1/FusedBatchNormV3;rps_cnn_96_s2_5conv_symmetric_pad/conv2d_1/Conv2D",
+      "shape": [
+        1,
+        24,
+        24,
+        64
+      ],
+      "dtype": "int8",
+      "zero_point": [
+        -128
+      ],
+      "scale_mult_int32": [
+        74890800
+      ],
+      "scale_shift_uint6": [
+        31
+      ],
+      "quantized_dimension": 0
+    },
+    {
+      "index": 17,
+      "name": "rps_cnn_96_s2_5conv_symmetric_pad/symmetric_pad_2/Pad",
+      "shape": [
+        1,
+        26,
+        26,
+        64
+      ],
+      "dtype": "int8",
+      "zero_point": [
+        -128
+      ],
+      "scale_mult_int32": [
+        74890800
+      ],
+      "scale_shift_uint6": [
+        31
+      ],
+      "quantized_dimension": 0
+    },
+    {
+      "index": 18,
+      "name": "rps_cnn_96_s2_5conv_symmetric_pad/relu_2/Relu;rps_cnn_96_s2_5conv_symmetric_pad/batch_normalization_2/FusedBatchNormV3;rps_cnn_96_s2_5conv_symmetric_pad/conv2d_2/Conv2D",
+      "shape": [
+        1,
+        12,
+        12,
+        128
+      ],
+      "dtype": "int8",
+      "zero_point": [
+        -128
+      ],
+      "scale_mult_int32": [
+        63046384
+      ],
+      "scale_shift_uint6": [
+        31
+      ],
+      "quantized_dimension": 0
+    },
+    {
+      "index": 19,
+      "name": "rps_cnn_96_s2_5conv_symmetric_pad/symmetric_pad_3/Pad",
+      "shape": [
+        1,
+        14,
+        14,
+        128
+      ],
+      "dtype": "int8",
+      "zero_point": [
+        -128
+      ],
+      "scale_mult_int32": [
+        63046384
+      ],
+      "scale_shift_uint6": [
+        31
+      ],
+      "quantized_dimension": 0
+    },
+    {
+      "index": 20,
+      "name": "rps_cnn_96_s2_5conv_symmetric_pad/relu_3/Relu;rps_cnn_96_s2_5conv_symmetric_pad/batch_normalization_3/FusedBatchNormV3;rps_cnn_96_s2_5conv_symmetric_pad/conv2d_3/Conv2D",
+      "shape": [
+        1,
+        12,
+        12,
+        192
+      ],
+      "dtype": "int8",
+      "zero_point": [
+        -128
+      ],
+      "scale_mult_int32": [
+        121310608
+      ],
+      "scale_shift_uint6": [
+        31
+      ],
+      "quantized_dimension": 0
+    },
+    {
+      "index": 21,
+      "name": "rps_cnn_96_s2_5conv_symmetric_pad/conv2d_4/BiasAdd;rps_cnn_96_s2_5conv_symmetric_pad/conv2d_4/Conv2D;rps_cnn_96_s2_5conv_symmetric_pad/conv2d_4/BiasAdd/ReadVariableOp",
+      "shape": [
+        1,
+        12,
+        12,
+        3
+      ],
+      "dtype": "int8",
+      "zero_point": [
+        23
+      ],
+      "scale_mult_int32": [
+        1565491584
+      ],
+      "scale_shift_uint6": [
+        30
+      ],
+      "quantized_dimension": 0
+    },
+    {
+      "index": 22,
+      "name": "rps_cnn_96_s2_5conv_symmetric_pad/global_average_pooling2d/Mean",
+      "shape": [
+        1,
+        3
+      ],
+      "dtype": "int8",
+      "zero_point": [
+        32
+      ],
+      "scale_mult_int32": [
+        250605648
+      ],
+      "scale_shift_uint6": [
+        31
+      ],
+      "quantized_dimension": 0
+    },
+    {
+      "index": 23,
+      "name": "StatefulPartitionedCall:0",
+      "shape": [
+        1,
+        3
+      ],
+      "dtype": "int8",
+      "zero_point": [
+        -128
+      ],
+      "scale_mult_int32": [
+        8388608
+      ],
+      "scale_shift_uint6": [
+        31
+      ],
+      "quantized_dimension": 0
+    }
+  ],
+  "conv_layers": [
+    {
+      "op_index": 1,
+      "name": "Conv1",
+      "input_tensor_index": 13,
+      "weight_tensor_index": 12,
+      "bias_tensor_index": 11,
+      "output_tensor_index": 14,
+      "input_zero_point": -26,
+      "weight_zero_point": [
+        0
+      ],
+      "output_zero_point": -128,
+      "bias_zero_point": [
+        0
+      ],
+      "bias_values_int32": [
+        323,
+        -528,
+        -623,
+        -611,
+        -176,
+        599,
+        305,
+        73,
+        -520,
+        -747,
+        73,
+        -730,
+        -1074,
+        -882,
+        -514,
+        420,
+        -584,
+        -807,
+        -902,
+        -601,
+        -88,
+        47,
+        841,
+        -781,
+        360,
+        -289,
+        -463,
+        475,
+        -503,
+        -398,
+        -260,
+        -598
+      ],
+      "requant_mult_int32": [
+        16911749
+      ],
+      "requant_shift_uint6": [
+        31
+      ]
+    },
+    {
+      "op_index": 3,
+      "name": "Conv2",
+      "input_tensor_index": 15,
+      "weight_tensor_index": 10,
+      "bias_tensor_index": 9,
+      "output_tensor_index": 16,
+      "input_zero_point": -128,
+      "weight_zero_point": [
+        0
+      ],
+      "output_zero_point": -128,
+      "bias_zero_point": [
+        0
+      ],
+      "bias_values_int32": [
+        -8524,
+        -5090,
+        1170,
+        -396,
+        575,
+        416,
+        754,
+        580,
+        2636,
+        65,
+        359,
+        -418,
+        8377,
+        6874,
+        -2701,
+        -2876,
+        2265,
+        -1436,
+        -139,
+        1012,
+        5410,
+        -1226,
+        923,
+        -6245,
+        7042,
+        -800,
+        -9296,
+        -4523,
+        7314,
+        7145,
+        1595,
+        4548,
+        -5903,
+        3588,
+        4501,
+        3972,
+        1046,
+        629,
+        -9466,
+        4443,
+        -7444,
+        395,
+        9090,
+        4903,
+        5619,
+        1396,
+        -2819,
+        4625,
+        7479,
+        -1544,
+        1155,
+        7723,
+        4870,
+        1545,
+        272,
+        9136,
+        4277,
+        -2597,
+        4887,
+        -428,
+        222,
+        312,
+        4425,
+        7666
+      ],
+      "requant_mult_int32": [
+        5684078
+      ],
+      "requant_shift_uint6": [
+        31
+      ]
+    },
+    {
+      "op_index": 5,
+      "name": "Conv3",
+      "input_tensor_index": 17,
+      "weight_tensor_index": 8,
+      "bias_tensor_index": 7,
+      "output_tensor_index": 18,
+      "input_zero_point": -128,
+      "weight_zero_point": [
+        0
+      ],
+      "output_zero_point": -128,
+      "bias_zero_point": [
+        0
+      ],
+      "bias_values_int32": [
+        18497,
+        8905,
+        6093,
+        11552,
+        15682,
+        8971,
+        -4040,
+        23023,
+        -21924,
+        13586,
+        -4180,
+        2264,
+        10710,
+        9827,
+        16447,
+        7233,
+        11682,
+        -19546,
+        9481,
+        -18013,
+        16714,
+        16828,
+        16432,
+        -15846,
+        614,
+        -812,
+        4496,
+        10746,
+        3472,
+        15317,
+        18316,
+        5120,
+        3565,
+        12754,
+        7225,
+        -2669,
+        12316,
+        5587,
+        14515,
+        -17598,
+        26277,
+        10046,
+        16880,
+        14788,
+        9863,
+        3197,
+        9962,
+        6044,
+        23503,
+        -12897,
+        -37,
+        9564,
+        -8653,
+        -3102,
+        7573,
+        -442,
+        12166,
+        20806,
+        9834,
+        7317,
+        -3348,
+        -13838,
+        -5140,
+        11774,
+        -5992,
+        16940,
+        9707,
+        -15687,
+        -1337,
+        8852,
+        3358,
+        -8991,
+        6469,
+        -1621,
+        2685,
+        28011,
+        10228,
+        12923,
+        -10171,
+        22637,
+        61,
+        15430,
+        4888,
+        -18656,
+        -17264,
+        -11300,
+        8294,
+        13828,
+        14848,
+        17545,
+        14759,
+        -464,
+        10299,
+        9706,
+        -4049,
+        11811,
+        16705,
+        25378,
+        12697,
+        12470,
+        5468,
+        8545,
+        19037,
+        -1761,
+        13498,
+        -1546,
+        14613,
+        25819,
+        -5567,
+        4433,
+        10462,
+        16013,
+        15912,
+        -13582,
+        16952,
+        15222,
+        18601,
+        10757,
+        21281,
+        6560,
+        14462,
+        3984,
+        11358,
+        16727,
+        12734,
+        7954,
+        20170,
+        18733
+      ],
+      "requant_mult_int32": [
+        3684147
+      ],
+      "requant_shift_uint6": [
+        31
+      ]
+    },
+    {
+      "op_index": 7,
+      "name": "Conv4",
+      "input_tensor_index": 19,
+      "weight_tensor_index": 6,
+      "bias_tensor_index": 5,
+      "output_tensor_index": 20,
+      "input_zero_point": -128,
+      "weight_zero_point": [
+        0
+      ],
+      "output_zero_point": -128,
+      "bias_zero_point": [
+        0
+      ],
+      "bias_values_int32": [
+        -12175,
+        4750,
+        5341,
+        18595,
+        9768,
+        12945,
+        14779,
+        13022,
+        -2659,
+        -3139,
+        11615,
+        -3914,
+        12512,
+        2857,
+        16966,
+        -8243,
+        12646,
+        -10655,
+        10434,
+        12045,
+        14582,
+        -628,
+        13768,
+        492,
+        -3866,
+        22415,
+        -12504,
+        12277,
+        10532,
+        -7274,
+        -8858,
+        136,
+        5891,
+        -14118,
+        9254,
+        2504,
+        5038,
+        -13608,
+        5795,
+        14321,
+        -9317,
+        -2846,
+        3982,
+        6975,
+        8115,
+        -5823,
+        -5980,
+        19988,
+        12395,
+        14109,
+        -2772,
+        6003,
+        1106,
+        7916,
+        -2781,
+        20067,
+        15959,
+        10514,
+        -13058,
+        14772,
+        10816,
+        5446,
+        -4387,
+        10910,
+        8491,
+        -5,
+        2193,
+        2163,
+        -2201,
+        2528,
+        -5256,
+        -6347,
+        11119,
+        16838,
+        11931,
+        6097,
+        9604,
+        14938,
+        9638,
+        -2632,
+        -8752,
+        -12581,
+        15065,
+        11288,
+        18971,
+        7344,
+        11514,
+        9502,
+        10203,
+        1281,
+        13808,
+        -10987,
+        10179,
+        -14136,
+        858,
+        22259,
+        -14015,
+        5774,
+        14505,
+        -5968,
+        -6426,
+        -11803,
+        -5256,
+        2775,
+        -12,
+        -5151,
+        11412,
+        12070,
+        2043,
+        -8890,
+        -5820,
+        2298,
+        2499,
+        13504,
+        3864,
+        12784,
+        16273,
+        -3342,
+        4204,
+        7509,
+        9507,
+        17327,
+        9491,
+        -11154,
+        20274,
+        13784,
+        -7108,
+        5330,
+        -13850,
+        11904,
+        12450,
+        5146,
+        12854,
+        -4852,
+        14782,
+        -13099,
+        13673,
+        15439,
+        -28,
+        14793,
+        -6055,
+        -5509,
+        3803,
+        -1037,
+        -4385,
+        11047,
+        -3723,
+        -5593,
+        22076,
+        -9632,
+        11942,
+        -5523,
+        20309,
+        -2081,
+        21093,
+        5208,
+        9639,
+        16794,
+        1563,
+        6773,
+        16802,
+        -8954,
+        7817,
+        1071,
+        12398,
+        -4804,
+        -16639,
+        -3293,
+        -5015,
+        20062,
+        11947,
+        9369,
+        -9300,
+        15452,
+        9685,
+        -2920,
+        8189,
+        -10583,
+        -5894,
+        2814,
+        7186,
+        3682,
+        544,
+        -5140,
+        15856,
+        14823,
+        411,
+        11394,
+        14022,
+        -943,
+        8982,
+        1264
+      ],
+      "requant_mult_int32": [
+        1468779
+      ],
+      "requant_shift_uint6": [
+        31
+      ]
+    },
+    {
+      "op_index": 8,
+      "name": "Conv5",
+      "input_tensor_index": 20,
+      "weight_tensor_index": 4,
+      "bias_tensor_index": 3,
+      "output_tensor_index": 21,
+      "input_zero_point": -128,
+      "weight_zero_point": [
+        0
+      ],
+      "output_zero_point": 23,
+      "bias_zero_point": [
+        0
+      ],
+      "bias_values_int32": [
+        -87,
+        160,
+        -71
+      ],
+      "requant_mult_int32": [
+        385227
+      ],
+      "requant_shift_uint6": [
+        31
+      ]
+    }
+  ]
+}

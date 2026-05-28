@@ -1,0 +1,80 @@
+{
+  "model_path": "model.tflite",
+  "source": {
+    "family": "torchvision.models.squeezenet1_1",
+    "weights": "SqueezeNet1_1_Weights.IMAGENET1K_V1",
+    "checkpoint": "/home/raven1911/.cache/torch/hub/checkpoints/squeezenet1_1-b8a52dc0.pth"
+  },
+  "format": {
+    "input_formula": "q_in = clamp_int8(round((pixel * mult[channel] + offset[channel]) / 2^shift))",
+    "pixel_range": "raw RGB uint8 pixels, 0..255"
+  },
+  "input": {
+    "tensor": {
+      "index": 0,
+      "name": "serving_default_input:0",
+      "shape": [
+        1,
+        224,
+        224,
+        3
+      ],
+      "dtype": "int8",
+      "scale": [
+        0.01865844801068306
+      ],
+      "zero_point": [
+        -14
+      ],
+      "quantized_dimension": 0
+    },
+    "model_color_order": "RGB",
+    "pixel_denominator": 255,
+    "mean": [
+      0.48500001430511475,
+      0.4560000002384186,
+      0.4059999883174896
+    ],
+    "std": [
+      0.2290000021457672,
+      0.2240000069141388,
+      0.22499999403953552
+    ],
+    "fixed": {
+      "shift": 24,
+      "mult": [
+        15398157,
+        15741864,
+        15671900
+      ],
+      "offset": [
+        -2139248000,
+        -2065345024,
+        -1857392896
+      ]
+    },
+    "resize": {
+      "recommended": "resize/crop or letterbox to 224x224 before quantizing",
+      "torchvision_default": "resize 256, center crop 224"
+    }
+  },
+  "output": {
+    "tensor": {
+      "index": 91,
+      "name": "StatefulPartitionedCall_1:0",
+      "shape": [
+        1,
+        1000
+      ],
+      "dtype": "int8",
+      "scale": [
+        0.06428243964910507
+      ],
+      "zero_point": [
+        -128
+      ],
+      "quantized_dimension": 0
+    },
+    "labels": "labels.txt"
+  }
+}
