@@ -6,6 +6,8 @@ Repository này trình bày nền tảng **RISC-V AI SoC định hướng ASIC**
 
 - **Report thesis:** [docs/report-thesis/main.pdf](docs/report-thesis/main.pdf)
 - **Video demo:** [Google Drive demo folder](https://drive.google.com/drive/folders/19oA3CzA9WKEoQ1JPa15cW4yM1nDpZaN2?usp=sharing)
+- **ASIC GDS:** [Google Drive GDS folder](https://drive.google.com/drive/folders/1tW2MXlDJZ_YXgO_VqpCdJiTTwywh9T0n?usp=sharing)
+- **ASIC source:** [Google Drive ASIC source folder](https://drive.google.com/drive/folders/174MNBMLwhTpfknMjO55SqrUgjreBZlFh?usp=sharing)
 - **Hình kiến trúc:** [docs/images/soc-architecture.png](docs/images/soc-architecture.png)
 
 ## Mục Tiêu Dự Án
@@ -42,6 +44,15 @@ CNN accelerator + DMA/memory subsystem
         v
 UART / Host dashboard / Demo output
 ```
+
+## Hiện Thực ASIC
+
+Phần ASIC của dự án bao gồm dữ liệu layout cuối cùng và source thiết kế dùng cho luồng triển khai ASIC.
+
+- **GDS:** [Google Drive GDS folder](https://drive.google.com/drive/folders/1tW2MXlDJZ_YXgO_VqpCdJiTTwywh9T0n?usp=sharing)
+- **Source ASIC:** [Google Drive ASIC source folder](https://drive.google.com/drive/folders/174MNBMLwhTpfknMjO55SqrUgjreBZlFh?usp=sharing)
+
+Trong đó, thư mục GDS dùng để lưu kết quả layout tapeout/final layout, còn thư mục source ASIC chứa mã nguồn và các file cần thiết để kiểm tra hoặc tái tạo luồng thiết kế ASIC.
 
 ## Ghi Chú
 
